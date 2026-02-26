@@ -20,15 +20,17 @@ function crypto(pass) {
     const firstPart = passArr.splice(passArr.length / 2);
     passArr.reverse();
     firstPart.reverse();
+    [firstPart[1], firstPart[2]] = [firstPart[2], firstPart[1]];
     return passArr.concat(firstPart).join('');
 }
 
-function check(pass, writedPass) {
+
+function check(writedPass, pass) {
     if (writedPass === crypto(pass)) {
         return true;
     }
     return false;
 }
-console.log(crypto('1234'));
-console.log(check('1234', '2143'));
-console.log(check('1234', '2134'));
+console.log(crypto('password'));
+console.log(check('ssapdorw', 'password'));
+console.log(check('ssapdorw', 'wrong'));
