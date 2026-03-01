@@ -18,7 +18,7 @@ function checkNum (num) {
 function filterArray (arr, fn) {
     const res = [];
     for (num of arr) {
-        if (fn(num) === true) {
+        if (fn(num) === false) {
             res.push(num);
         }
     }
