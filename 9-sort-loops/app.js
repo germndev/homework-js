@@ -11,7 +11,6 @@
 
 const arr = [1, 40, -5, 10, 0];
 
-
 function SortArray (numbers) {
     for (let i = 0; i < numbers.length; i++) {
         for (let j = i + 1; j < numbers.length; j++) {
@@ -20,7 +19,7 @@ function SortArray (numbers) {
             }
         }
     }
-    return arr;
+    return numbers;
 }
 
 console.log(SortArray(arr));
