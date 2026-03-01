@@ -16,12 +16,13 @@ function checkNum (num) {
 }
 
 function filterArray (arr, fn) {
-    for (num in arr) {
-        if (fn(arr[num]) === false) {
-            arr.splice(num, 1);
+    const res = [];
+    for (num of arr) {
+        if (fn(num) === true) {
+            res.push(num);
         }
     }
-    return arr;
+    return res;
 }
 
 console.log(filterArray(numbers, checkNum));
